@@ -34,7 +34,7 @@ namespace Frontend.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
-            //var e = await roleManager.CreateAsync(new IdentityRole("Administrador"));
+            var i = await roleManager.CreateAsync(new IdentityRole("Administrador"));
             if (ModelState.IsValid)
             {
                 // Copy data from RegisterViewModel to IdentityUser

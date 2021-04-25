@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace FrontEnd.Controllers
 {
-    [Authorize(Roles = "prueba")]
+    [Authorize(Roles = "Administrador")]
     public class InstitucionController : Controller
     {
         public IActionResult Index()
@@ -24,7 +24,7 @@ namespace FrontEnd.Controllers
                 var content = response.Content.ReadAsStringAsync().Result;
                 List<Models.InstitucionViewModel> institucions = JsonConvert.DeserializeObject<List<Models.InstitucionViewModel>>(content);
 
-                ViewBag.Title = "All Institucions";
+               // ViewBag.Title = "All Institucions";
                 return View(institucions);
             }
             catch (Exception)
