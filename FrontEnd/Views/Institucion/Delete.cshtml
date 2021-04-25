@@ -1,0 +1,33 @@
+﻿@model FrontEnd.Models.InstitucionViewModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>InstitucionViewModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col s2">
+            @Html.DisplayNameFor(model => model.IdInstitucion)
+        </dt>
+        <dd class = "col s10">
+            @Html.DisplayFor(model => model.IdInstitucion)
+        </dd>
+        <dt class = "col s2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class = "col s10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        @Html.HiddenFor(x => x.IdInstitucion)
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

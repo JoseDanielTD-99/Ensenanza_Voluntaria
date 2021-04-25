@@ -1,0 +1,30 @@
+﻿@model FrontEnd.Models.InstitucionViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>InstitucionViewModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col s2">
+            @Html.DisplayNameFor(model => model.IdInstitucion)
+        </dt>
+        <dd class = "col s10">
+            @Html.DisplayFor(model => model.IdInstitucion)
+        </dd>
+        <dt class = "col s2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class = "col s10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdInstitucion }) |
+    <a asp-action="Index">Back to List</a>
+</div>
