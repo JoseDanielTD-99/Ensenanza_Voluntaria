@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace FrontEnd.Controllers
 {
-    [Authorize(Roles = "Administrador")]
+    [Authorize(Roles = "Administrador, Profesor")]
     public class InstitucionController : Controller
     {
         public IActionResult Index()

@@ -16,6 +16,8 @@ namespace FrontEnd.Models
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
+        public string Rol { get; set; }
+
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]

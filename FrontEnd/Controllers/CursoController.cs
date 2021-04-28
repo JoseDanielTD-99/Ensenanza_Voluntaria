@@ -16,7 +16,7 @@ namespace FrontEnd.Controllers
             try
             {
                 ServiceRepository serviceObj = new ServiceRepository();
-                HttpResponseMessage response = serviceObj.GetResponse("api/Institucion/getall");
+                HttpResponseMessage response = serviceObj.GetResponse("api/Curso/getall");
                 response.EnsureSuccessStatusCode();
                 //List<Models.DistritoViewModel> categories = new List<Models.DistritoViewModel>();
                 var content = response.Content.ReadAsStringAsync().Result;

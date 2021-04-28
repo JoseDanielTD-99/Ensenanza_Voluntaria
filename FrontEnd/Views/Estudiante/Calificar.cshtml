@@ -1,0 +1,31 @@
+﻿@model FrontEnd.Models.TutoriaViewModel
+
+@{
+    ViewData["Title"] = "Calificar";
+}
+
+<h1>Calificar</h1>
+
+<h4>TutoriaViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        @using (Html.BeginForm("guardarCalificacion", "Estudiante", FormMethod.Post))
+        {
+            @Html.Hidden("idTutoria", Model.IdTutoriaCursos)
+
+            <p class="range-field">
+                <input type="range" name="calificacion" id="calificacion" min="1" max="5" />
+            </p>
+
+            <div class="form-group">
+                <input type="submit" value="Calificar Tutoria" class="btn btn-primary" />
+            </div>
+        }
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

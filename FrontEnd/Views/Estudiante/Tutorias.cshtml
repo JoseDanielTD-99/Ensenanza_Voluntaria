@@ -1,0 +1,50 @@
+﻿@model IEnumerable<FrontEnd.Models.MaterialViewModel>
+
+@{
+    ViewData["Title"] = "Tutorias";
+}
+
+<h1>Tutorias</h1>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+    <div class="col s4">
+        <div class="row">
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="~/Imagenes/cuadernos-y-utiles-escolares.jpg">
+                    </div>
+                    <div class="card-content">
+                        <h4>@item.Tutoria.Curso.Nombre</h4>
+                        <p>
+                            @item.Tutoria.Descripcion
+                        </p>
+                    </div>
+                    <div class="card-action">
+                        @using (Html.BeginForm("Calificar", "Estudiante", FormMethod.Post))
+                        {
+                            @Html.Hidden("idTutoria", item.Tutoria.IdTutoriaCursos)
+
+                            <div class="form-group">
+                                <input type="submit" value="Calificar Tutoria" class="btn btn-primary" />
+                            </div>
+                        }
+                        <br />
+                        @using (Html.BeginForm("Download", "Tutoria", FormMethod.Post))
+                        {
+                            @Html.Hidden("archivo", item.DireccionArchivo)
+
+                            <div class="form-group">
+                                <input type="submit" value="Descargar Material" class="btn btn-primary" />
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    }
+</div>
+

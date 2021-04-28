@@ -7,14 +7,14 @@
 
 @inject UserManager<IdentityUser> userManager
 @inject SignInManager<IdentityUser> SignInManager
-@inject RoleManager<IdentityRole> role
+
 <h1>Register</h1>
 
 <h4>RegisterViewModel</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Register">
+        <form asp-action="RegisterUser">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Email" class="control-label"></label>
@@ -31,9 +31,6 @@
                 <input asp-for="ComfirmPassword" class="form-control" />
                 <span asp-validation-for="ComfirmPassword" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
             @if (SignInManager.IsSignedIn(User))
             {
                 var user = await SignInManager.UserManager.FindByNameAsync(User.Identity.Name);
@@ -44,11 +41,29 @@
 
                 if (r == "Administrador")
                 {
-                    <button>fjewogowjfoewj</button>
+                    <p style="display: inline-block;">
+                        <label>
+                            <input class="with-gap" name="Rol" type="radio" value="Estudiante" />
+                            <span>Estudiante</span>
+                        </label>
+                    </p>
+                    <p style="display: inline-block;">
+                        <label>
+                            <input class="with-gap" name="Rol" type="radio" value="Profesor" />
+                            <span>Profesor</span>
+                        </label>
+                    </p>
+                }
+                else if (r == "Profesor")
+                {
+                    <input type="hidden" name="Rol" value="Estudiante" />
                 }
 
 
             }
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
         </form>
     </div>
 </div>

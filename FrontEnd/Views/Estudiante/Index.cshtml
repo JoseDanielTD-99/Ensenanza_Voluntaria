@@ -3,6 +3,12 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<style>
+    body {
+        background-color: black;
+    }
+</style>
 <section>
 
     <div class="black white-text center">
@@ -31,7 +37,7 @@
 
     <div class="parallax-container">
         <div class="parallax">
-            <img src="../Imagenes/coliseo-romano-wallpaper-hd.jpg" alt="" />
+            <img src="~/Imagenes/coliseo-romano-wallpaper-hd.jpg" alt="" />
         </div>
     </div>
 
@@ -123,10 +129,4 @@
             <img src="../Imagenes/matematicas.jpg" alt="" />
         </div>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            M.AutoInit();
-        });
-    </script>
     </section>

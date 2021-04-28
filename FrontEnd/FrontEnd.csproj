@@ -5,6 +5,63 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\Imagenes\abolición del ejercito.jpg" />
+    <None Include="wwwroot\Imagenes\Bandera Costa Rica HD.png" />
+    <None Include="wwwroot\Imagenes\biblioteca_libros_prohibidos.jpg" />
+    <None Include="wwwroot\Imagenes\Calificacion.gif" />
+    <None Include="wwwroot\Imagenes\calificacion.png" />
+    <None Include="wwwroot\Imagenes\Cartilago.jpg" />
+    <None Include="wwwroot\Imagenes\Celula Animal.jpg" />
+    <None Include="wwwroot\Imagenes\Celula Vegetal.jpg" />
+    <None Include="wwwroot\Imagenes\coliseo-romano-wallpaper-hd.jpg" />
+    <None Include="wwwroot\Imagenes\coliseo.jpg" />
+    <None Include="wwwroot\Imagenes\continentes 1.jpg" />
+    <None Include="wwwroot\Imagenes\continentes 2.gif" />
+    <None Include="wwwroot\Imagenes\cuadernos-y-utiles-escolares.jpg" />
+    <None Include="wwwroot\Imagenes\ejemplo resta.png" />
+    <None Include="wwwroot\Imagenes\escudo-costa-rica.jpg" />
+    <None Include="wwwroot\Imagenes\esqueleto humano.jpg" />
+    <None Include="wwwroot\Imagenes\esqueleto-humano HD.jpg" />
+    <None Include="wwwroot\Imagenes\estructura de la oración.jpg" />
+    <None Include="wwwroot\Imagenes\falla de san andres.jpg" />
+    <None Include="wwwroot\Imagenes\gif subir archivo.gif" />
+    <None Include="wwwroot\Imagenes\hueso esponjoso.jpg" />
+    <None Include="wwwroot\Imagenes\Imagen Login profe.png" />
+    <None Include="wwwroot\Imagenes\juan santamaria.jpg" />
+    <None Include="wwwroot\Imagenes\login-estudiante.jpg" />
+    <None Include="wwwroot\Imagenes\login-profesor.jpg" />
+    <None Include="wwwroot\Imagenes\login1.jpg" />
+    <None Include="wwwroot\Imagenes\login2.jpg" />
+    <None Include="wwwroot\Imagenes\login3.jpg" />
+    <None Include="wwwroot\Imagenes\login4.jpg" />
+    <None Include="wwwroot\Imagenes\login5.jpg" />
+    <None Include="wwwroot\Imagenes\LogoEstudiante.png" />
+    <None Include="wwwroot\Imagenes\matematicas.jpg" />
+    <None Include="wwwroot\Imagenes\movimiento convergente.png" />
+    <None Include="wwwroot\Imagenes\movimiento divergente.png" />
+    <None Include="wwwroot\Imagenes\multiplicacion ejemplo.jpg" />
+    <None Include="wwwroot\Imagenes\paso1 resta con llevada.png" />
+    <None Include="wwwroot\Imagenes\paso1 resta sin llevada.png" />
+    <None Include="wwwroot\Imagenes\paso2 resta con llevada.png" />
+    <None Include="wwwroot\Imagenes\paso2 resta.png" />
+    <None Include="wwwroot\Imagenes\paso_1_multiplicacion dos cifras.png" />
+    <None Include="wwwroot\Imagenes\paso_2_multiplicacion dos cifras.png" />
+    <None Include="wwwroot\Imagenes\paso_3_multiplicacion dos cifras.png" />
+    <None Include="wwwroot\Imagenes\quimica1.jpg" />
+    <None Include="wwwroot\Imagenes\Sistema Digestivo.jpg" />
+    <None Include="wwwroot\Imagenes\Slide1.jpg" />
+    <None Include="wwwroot\Imagenes\Slide2.jpg" />
+    <None Include="wwwroot\Imagenes\Slide3.jpeg" />
+    <None Include="wwwroot\Imagenes\suma_con_llevadas.png" />
+    <None Include="wwwroot\Imagenes\suma_sin_llevadas.png" />
+    <None Include="wwwroot\Imagenes\tectonismo epirogénicos.jpg" />
+    <None Include="wwwroot\Imagenes\tectonismo orogénico.png" />
+    <None Include="wwwroot\Imagenes\Volcan Irazú HD.jpeg" />
+    <None Include="wwwroot\Imagenes\Volcan Irazú.jpeg" />
+    <None Include="wwwroot\Imagenes\william walker.jpeg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.0" />
@@ -12,11 +69,16 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\BackEnd\BackEnd.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\files\" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>

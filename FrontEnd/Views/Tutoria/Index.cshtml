@@ -1,0 +1,77 @@
+﻿@model IEnumerable<FrontEnd.Models.TutoriaViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdTutoriaCursos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdInstitucion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdCurso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaHora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.calificaciones)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTutoriaCursos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Institucion.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Curso.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaHora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.calificaciones)/5,00
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IdTutoriaCursos }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IdTutoriaCursos }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdTutoriaCursos }) |
+                @Html.ActionLink("Archivo", "Archivo", new { id = item.IdTutoriaCursos }) |
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+
+@using (Html.BeginForm("Download", "Tutoria", FormMethod.Post))
+{
+    @Html.Hidden("archivo", "Presentación1.pptx")
+
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+}
