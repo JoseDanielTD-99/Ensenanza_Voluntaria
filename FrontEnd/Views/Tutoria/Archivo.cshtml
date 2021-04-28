@@ -6,35 +6,56 @@
 
 <h1>Archivo</h1>
 
-<h4>TutoriaViewModel</h4>
-<hr />
-@Html.LabelFor(x => x.Institucion.Nombre)
-@Html.DisplayFor(x => x.Institucion.Nombre)
-<br />
-@Html.LabelFor(x => x.Curso.Nombre)
-@Html.DisplayFor(x => x.Curso.Nombre)
-<br />
-@Html.LabelFor(x => x.FechaHora)
-@Html.DisplayFor(x => x.FechaHora)
-<br />
-<div class="row">
-    <div class="col-md-4">
-        @using (Html.BeginForm("Archivo", "Tutoria", FormMethod.Post, new { enctype = "multipart/form-data" }))
-        {
-            @Html.Hidden("IdTutoriaCursos", Model.IdCurso)
 
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-            <input type="file" name="file" />
-
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        }
-    </div>
-</div>
 
 <div>
     <a asp-action="Index">Back to List</a>
+</div>
+<div class="row">
+
+    <div class="class=" col s6 ">
+        <div class="card">
+            <div class="card-content ">
+
+
+
+                <h4>TutoriaViewModel</h4>
+                <hr />
+                @Html.LabelFor(x => x.Institucion.Nombre)
+                @Html.DisplayFor(x => x.Institucion.Nombre)
+                <br />
+                @Html.LabelFor(x => x.Curso.Nombre)
+                @Html.DisplayFor(x => x.Curso.Nombre)
+                <br />
+                @Html.LabelFor(x => x.FechaHora)
+                @Html.DisplayFor(x => x.FechaHora)
+                <br />
+                <div class="row">
+                    <div class="col-md-4">
+                        @using (Html.BeginForm("Archivo", "Tutoria", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            @Html.Hidden("IdTutoriaCursos", Model.IdCurso)
+
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                            <input type="file" name="file" />
+
+                            <div class="form-group">
+                                <input type="submit" value="Save" class="btn btn-primary" />
+                            </div>
+                        }
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
 </div>
 
