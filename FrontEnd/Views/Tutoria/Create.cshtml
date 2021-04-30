@@ -5,41 +5,58 @@
 }
 
 <h1>Create</h1>
-
-<h4>TutoriaViewModel</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Descripcion" class="control-label"></label>
-                <input asp-for="Descripcion" class="form-control" />
-                <span asp-validation-for="Descripcion" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdInstitucion" class="control-label"></label>
-                @Html.DropDownListFor(model => model.IdInstitucion, new SelectList(Model.Institucions, "IdInstitucion", "Nombre"), "--Select--")
-                <span asp-validation-for="IdInstitucion" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdCurso" class="control-label"></label>
-                @Html.DropDownListFor(model => model.IdCurso, new SelectList(Model.Cursos, "IdCurso", "Nombre"), "--Select--")
-                <span asp-validation-for="IdCurso" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FechaHora" class="control-label"></label>
-                <input asp-for="FechaHora" class="form-control" />
-                <span asp-validation-for="FechaHora" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+<div class="row">
+
+    <div class="class=" col s6 ">
+        <div class="card">
+            <div class="card-content ">
+
+                
+                <hr />
+                <div class="row">
+                    <div class="col-md-4">
+                        <form asp-action="Create">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="Descripcion" class="control-label"></label>
+                                <input asp-for="Descripcion" class="form-control" />
+                                <span asp-validation-for="Descripcion" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="IdInstitucion" class="control-label"></label>
+                                @Html.DropDownListFor(model => model.IdInstitucion, new SelectList(Model.Institucions, "IdInstitucion", "Nombre"), "--Select--")
+                                <span asp-validation-for="IdInstitucion" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="IdCurso" class="control-label"></label>
+                                @Html.DropDownListFor(model => model.IdCurso, new SelectList(Model.Cursos, "IdCurso", "Nombre"), "--Select--")
+                                <span asp-validation-for="IdCurso" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="FechaHora" class="control-label"></label>
+                                <input asp-for="FechaHora" class="form-control" />
+                                <span asp-validation-for="FechaHora" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Create" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
 

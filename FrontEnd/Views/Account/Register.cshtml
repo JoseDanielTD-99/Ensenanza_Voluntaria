@@ -9,64 +9,81 @@
 @inject SignInManager<IdentityUser> SignInManager
 
 <h1>Register</h1>
-
-<h4>RegisterViewModel</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="RegisterUser">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
+
+    <div class="col s6  offset-s3 ">
+        <div class="card  ">
+            <div class="card-content Black-text">
+
+
+
+                
+                <hr />
+                <div class="row">
+                    <div class="col-md-4">
+                        <form asp-action="RegisterUser">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="Email" class="control-label"></label>
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Password" class="control-label"></label>
+                                <input asp-for="Password" class="form-control" />
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ComfirmPassword" class="control-label"></label>
+                                <input asp-for="ComfirmPassword" class="form-control" />
+                                <span asp-validation-for="ComfirmPassword" class="text-danger"></span>
+                            </div>
+                            @if (SignInManager.IsSignedIn(User))
+                            {
+                                var user = await SignInManager.UserManager.FindByNameAsync(User.Identity.Name);
+
+                                var rol = userManager.GetRolesAsync(user);
+
+                                var r = rol.Result[0];
+
+                                if (r == "Administrador")
+                                {
+                                    <p style="display: inline-block;">
+                                        <label>
+                                            <input class="with-gap" name="Rol" type="radio" value="Estudiante" />
+                                            <span>Estudiante</span>
+                                        </label>
+                                    </p>
+                                    <p style="display: inline-block;">
+                                        <label>
+                                            <input class="with-gap" name="Rol" type="radio" value="Profesor" />
+                                            <span>Profesor</span>
+                                        </label>
+                                    </p>
+                                }
+                                else if (r == "Profesor")
+                                {
+                                    <input type="hidden" name="Rol" value="Estudiante" />
+                                }
+
+
+                            }
+                            <div class="form-group">
+                                <input type="submit" value="Create" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
             </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ComfirmPassword" class="control-label"></label>
-                <input asp-for="ComfirmPassword" class="form-control" />
-                <span asp-validation-for="ComfirmPassword" class="text-danger"></span>
-            </div>
-            @if (SignInManager.IsSignedIn(User))
-            {
-                var user = await SignInManager.UserManager.FindByNameAsync(User.Identity.Name);
-
-                var rol = userManager.GetRolesAsync(user);
-
-                var r = rol.Result[0];
-
-                if (r == "Administrador")
-                {
-                    <p style="display: inline-block;">
-                        <label>
-                            <input class="with-gap" name="Rol" type="radio" value="Estudiante" />
-                            <span>Estudiante</span>
-                        </label>
-                    </p>
-                    <p style="display: inline-block;">
-                        <label>
-                            <input class="with-gap" name="Rol" type="radio" value="Profesor" />
-                            <span>Profesor</span>
-                        </label>
-                    </p>
-                }
-                else if (r == "Profesor")
-                {
-                    <input type="hidden" name="Rol" value="Estudiante" />
-                }
-
-
-            }
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
+
 </div>
+
+
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
