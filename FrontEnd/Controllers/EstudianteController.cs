@@ -24,6 +24,62 @@ namespace FrontEnd.Controllers
         }
 
 
+        public IActionResult Tectonismo()
+        {
+            return View("~/Views/Estudiante/Estudios Sociales/Tectonismo.cshtml");
+        }
+
+        public IActionResult HistoriaCR()
+        {
+            return View("~/Views/Estudiante/Estudios Sociales/HistoriaCostaRica.cshtml");
+        }
+
+        public IActionResult UsoSignosPuntuacion()
+        {
+            return View("~/Views/Estudiante/Espaniol/UsoSignosPuntuacion.cshtml");
+        }
+
+        public IActionResult UsoVyb()
+        {
+            return View("~/Views/Estudiante/Espaniol/UsoVyB.cshtml");
+        }
+
+        public IActionResult EstructuraOracion()
+        {
+            return View("~/Views/Estudiante/Espaniol/EstructuraOracion.cshtml");
+        }
+
+        public IActionResult SistemaDigestivo()
+        {
+            return View("~/Views/Estudiante/Ciencias/SistemaDigestivo.cshtml");
+        }
+
+        public IActionResult Esqueleto()
+        {
+            return View("~/Views/Estudiante/Ciencias/Esqueleto.cshtml");
+        }
+
+        public IActionResult Celula()
+        {
+            return View("~/Views/Estudiante/Ciencias/Celula.cshtml");
+        }
+
+        public IActionResult Suma()
+        {
+            return View("~/Views/Estudiante/Matemáticas/Suma.cshtml");
+        }
+
+        public IActionResult Resta()
+        {
+            return View("~/Views/Estudiante/Matemáticas/Resta.cshtml");
+        }
+
+        public IActionResult Multiplicacion()
+        {
+            return View("~/Views/Estudiante/Matemáticas/Multiplicacion.cshtml");
+        }
+
+
         public IActionResult Tutorias()
         {
             ServiceRepository serviceObj = new ServiceRepository();

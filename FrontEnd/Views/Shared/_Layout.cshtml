@@ -32,45 +32,31 @@
 
                     if (r == "Administrador")
                     {
-                <ul id="nav-mobile" class="left hide-on-med-and-down">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Institucion" asp-action="Index">instituciones</a>
-                    </li>
-                    <li class="tab">@Html.ActionLink("Registrar Usuario", "Register", "Account")</li>
-                    <li class="tab">@Html.ActionLink("Tutorías", "Index", "Tutoria")</li>
-                    <li class="tab">@Html.ActionLink("Asignar Tutoría", "AsignarTutoria", "Profesor")</li>
-                    <li class="tab">@Html.ActionLink("Agregar archivos", "crearArchivo", "Profesor")</li>
-                    <li class="tab">@Html.ActionLink("Instituciones", "Index", "Institucion")</li>
-                    <li class="tab">@Html.ActionLink("Profesores", "Profesores", "Profesor")</li>
-                    <li class="tab">@Html.ActionLink("Tutorias", "Tutorias", "Estudiante")</li>
-                </ul>
-
-                        <ul id="nav-mobile" class="center hide-on-med-and-down">
-                            <li>@Html.ActionLink("Cursos", "Index", "Curso")</li>
-                            <li>@Html.ActionLink("Archivos de Estudio", "Archivos", "Estudiante")</li>
-                            <li>@Html.ActionLink("Calificar Profesor", "CalificaProfe", "Estudiante")</li>
-                        </ul>
+                    <ul id="nav-mobile" class="left hide-on-med-and-down">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Institucion" asp-action="Index">instituciones</a>
+                        </li>
+                        <li class="tab">@Html.ActionLink("Registrar Usuario", "Register", "Account")</li>
+                        <li class="tab">@Html.ActionLink("Tutorías", "Index", "Tutoria")</li>
+                    
+                    
+                        <li class="tab">@Html.ActionLink("Instituciones", "Index", "Institucion")</li>
+                    
+                        <li class="tab">@Html.ActionLink("Material de tutorias", "Tutorias", "Estudiante")</li>
+                    </ul>
                     }
                     else if (r == "Profesor")
                     {
                         <ul id="nav-mobile" class="center hide-on-med-and-down">
-                            <li class="nav-item align-content-lg-end">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
-                            </li>
-                            <li class="tab">@Html.ActionLink("Estudiantes", "RegistrarEstudiante", "Profesor")</li>
-                            <li class="tab">@Html.ActionLink("Tutorías", "Tutorias", "Profesor")</li>
-                            <li class="tab">@Html.ActionLink("Asignar Tutoría", "AsignarTutoria", "Profesor")</li>
-                            <li class="tab">@Html.ActionLink("Agregar archivos", "crearArchivo", "Profesor")</li>
-                            <li class="tab">@Html.ActionLink("Instituciones", "Instituciones", "Profesor")</li>
-                            <li class="tab">@Html.ActionLink("Mi Calificación", "Calificaciones", "Profesor")</li>
+                            <li class="tab">@Html.ActionLink("Registrar Usuario", "Register", "Account")</li>
+                            <li class="tab">@Html.ActionLink("Tutorías", "Tutorias", "Tutoria")</li>
                         </ul>
                     }
                     else if (r == "Estudiante")
                     {
                         <ul id="nav-mobile" class="center hide-on-med-and-down">
-                            <li>@Html.ActionLink("Cursos", "Index", "Estudiante")</li>
-                            <li>@Html.ActionLink("Archivos de Estudio", "Archivos", "Estudiante")</li>
-                            <li>@Html.ActionLink("Calificar Profesor", "CalificaProfe", "Estudiante")</li>
+                            <li>@Html.ActionLink("Pagina principal", "Index", "Estudiante")</li>
+                            <li>@Html.ActionLink("Archivos de Estudio", "Tutorias", "Estudiante")</li>
                         </ul>
                     }
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -84,9 +70,6 @@
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li class="nav-item ml-auto">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
-                        </li>
-                        <li class="nav-item align-content-lg-end">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
                         </li>
                     </ul>
                 }

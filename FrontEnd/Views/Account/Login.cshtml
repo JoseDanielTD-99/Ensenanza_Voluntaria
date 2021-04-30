@@ -7,6 +7,40 @@
 <h1>Login</h1>
 
 <h4>LoginViewModel</h4>
+
+<div class="slider">
+    <ul class="slides">
+        <li>
+            <img src="~/Imagenes/login1.jpg">
+            <div class="caption center-align">
+            </div>
+        </li>
+        <li>
+            <img src="~/Imagenes/login2.jpg">
+            <div class="caption left-align">
+            </div>
+        </li>
+        <li>
+            <img src="~/Imagenes/login3.jpg">
+            <div class="caption right-align">
+            </div>
+        </li>
+        <li>
+            <img src="~/Imagenes/login4.jpg">
+            <div class="caption center-align">
+            </div>
+        </li>
+        <li>
+            <img src="~/Imagenes/login5.jpg">
+            <div class="caption center-align">
+            </div>
+        </li>
+    </ul>
+</div>
+
+<br />
+<br />
+
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -33,6 +67,14 @@
         </form>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.slider');
+        var instances = M.Slider.init(elems);
+    });
+
+</script>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

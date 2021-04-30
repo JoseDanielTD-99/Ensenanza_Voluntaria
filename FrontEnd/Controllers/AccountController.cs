@@ -135,11 +135,11 @@ namespace Frontend.Controllers
                 {
                     if (r == "Estudiante")
                     {
-                        return RedirectToAction("IndexEstudent", "home");
+                        return RedirectToAction("Index", "Estudiante");
                     }
                     else
                     {
-                        return RedirectToAction("Index", "home");
+                        return RedirectToAction("Index", "Tutoria");
                     }
                 }
 
