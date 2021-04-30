@@ -116,11 +116,26 @@ namespace FrontEnd.Controllers
             try
             {
                 ServiceRepository serviceObj = new ServiceRepository();
-                HttpResponseMessage response = serviceObj.GetResponse("api/Tutoria/?id=" + id.ToString());
+                HttpResponseMessage response = serviceObj.GetResponse("api/Tutoria/getall");
                 response.EnsureSuccessStatusCode();
-                Models.TutoriaViewModel tutoriaViewModel = response.Content.ReadAsAsync<Models.TutoriaViewModel>().Result;
-                //ViewBag.Title = "All Products";
-                return View(tutoriaViewModel);
+                //List<Models.DistritoViewModel> categories = new List<Models.DistritoViewModel>();
+                var content = response.Content.ReadAsStringAsync().Result;
+                List<Models.TutoriaViewModel> tutoria = JsonConvert.DeserializeObject<List<Models.TutoriaViewModel>>(content);
+
+                foreach (var item in tutoria)
+                {
+                    response = serviceObj.GetResponse("api/Curso/?id=" + item.IdCurso.ToString());
+                    response.EnsureSuccessStatusCode();
+                    item.Curso = response.Content.ReadAsAsync<Models.CursoViewModel>().Result;
+
+                    response = serviceObj.GetResponse("api/Institucion/?id=" + item.IdInstitucion.ToString());
+                    response.EnsureSuccessStatusCode();
+                    item.Institucion = response.Content.ReadAsAsync<Models.InstitucionViewModel>().Result;
+                }
+
+                var tutoriaArchivo = tutoria.SingleOrDefault(x => x.IdTutoriaCursos == id);
+
+                return View(tutoriaArchivo);
             }
             catch (Exception err)
             {
@@ -191,14 +206,34 @@ namespace FrontEnd.Controllers
         [HttpGet]
         public ActionResult Delete(int id)
         {
+            try
+            {
+                ServiceRepository serviceObj = new ServiceRepository();
+                HttpResponseMessage response = serviceObj.GetResponse("api/Tutoria/getall");
+                response.EnsureSuccessStatusCode();
+                //List<Models.DistritoViewModel> categories = new List<Models.DistritoViewModel>();
+                var content = response.Content.ReadAsStringAsync().Result;
+                List<Models.TutoriaViewModel> tutoria = JsonConvert.DeserializeObject<List<Models.TutoriaViewModel>>(content);
 
+                foreach (var item in tutoria)
+                {
+                    response = serviceObj.GetResponse("api/Curso/?id=" + item.IdCurso.ToString());
+                    response.EnsureSuccessStatusCode();
+                    item.Curso = response.Content.ReadAsAsync<Models.CursoViewModel>().Result;
 
-            ServiceRepository serviceObj = new ServiceRepository();
-            HttpResponseMessage response = serviceObj.GetResponse("api/Tutoria/?id=" + id.ToString());
-            response.EnsureSuccessStatusCode();
-            Models.TutoriaViewModel tutoriaViewModel = response.Content.ReadAsAsync<Models.TutoriaViewModel>().Result;
-            //ViewBag.Title = "All Products";
-            return View(tutoriaViewModel);
+                    response = serviceObj.GetResponse("api/Institucion/?id=" + item.IdInstitucion.ToString());
+                    response.EnsureSuccessStatusCode();
+                    item.Institucion = response.Content.ReadAsAsync<Models.InstitucionViewModel>().Result;
+                }
+
+                var tutoriaArchivo = tutoria.SingleOrDefault(x => x.IdTutoriaCursos == id);
+
+                return View(tutoriaArchivo);
+            }
+            catch (Exception err)
+            {
+                return RedirectToAction("Index", err);
+            }
         }
 
 
@@ -284,6 +319,7 @@ namespace FrontEnd.Controllers
                 await stream.CopyToAsync(memory);
             }
             memory.Position = 0;
+            
             return File(memory, "text/plain", Path.GetFileName(path));
         }
     }

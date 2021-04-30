@@ -32,24 +32,23 @@
 
                     if (r == "Administrador")
                     {
-                    <ul id="nav-mobile" class="left hide-on-med-and-down">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Institucion" asp-action="Index">instituciones</a>
-                        </li>
-                        <li class="tab">@Html.ActionLink("Registrar Usuario", "Register", "Account")</li>
-                        <li class="tab">@Html.ActionLink("Tutorías", "Index", "Tutoria")</li>
-                    
-                    
-                        <li class="tab">@Html.ActionLink("Instituciones", "Index", "Institucion")</li>
-                    
-                        <li class="tab">@Html.ActionLink("Material de tutorias", "Tutorias", "Estudiante")</li>
-                    </ul>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li class="tab">@Html.ActionLink("Registrar Usuario", "Register", "Account")</li>
+                    <li class="tab">@Html.ActionLink("Tutorías", "Index", "Tutoria")</li>
+
+
+                    <li class="tab">@Html.ActionLink("Instituciones", "Index", "Institucion")</li>
+
+                    <li class="tab">@Html.ActionLink("Cursos", "Index", "Curso")</li>
+
+                    <li class="tab">@Html.ActionLink("Material de tutorias", "Tutorias", "Estudiante")</li>
+                </ul>
                     }
                     else if (r == "Profesor")
                     {
                         <ul id="nav-mobile" class="center hide-on-med-and-down">
                             <li class="tab">@Html.ActionLink("Registrar Usuario", "Register", "Account")</li>
-                            <li class="tab">@Html.ActionLink("Tutorías", "Tutorias", "Tutoria")</li>
+                            <li class="tab">@Html.ActionLink("Tutorías", "Index", "Tutoria")</li>
                         </ul>
                     }
                     else if (r == "Estudiante")
@@ -67,11 +66,11 @@
                 }
                 else
                 {
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li class="nav-item ml-auto">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
-                        </li>
-                    </ul>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li class="nav-item ml-auto">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                </li>
+            </ul>
                 }
 
                 @*<ul class="navbar-nav flex-grow-1">
@@ -88,28 +87,27 @@
         </main>
     </div>
 
-    <footer class="page-footer cyan darken-3">
+    <footer class="page-footer cyan darken-3" style="position: relative; bottom: 0; width: 100%;">
         <div class="container">
             <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Footer Content</h5>
-                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                <div class="col l6 s12" style="margin-top: 20px;">
+                    <h5 class="white-text">Enseñanza Voluntaria</h5>
                 </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Links</h5>
+                <div class="col l4 offset-l2 s12" style="margin-top: 20px;">
+                    <h5 class="white-text">Contacto</h5>
                     <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                        <p>info@enseñanzavoluntaria.com</p>
+                        <p>+(506) 2239-1939</p>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="footer-copyright">
             <div class="container">
-                © 2014 Copyright Text
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                © 2021 Enseñanza Voluntaria
+                <a class="grey-text text-lighten-4 right" href="https://www.facebook.com/campaign/landing.php?campaign_id=1636795897&extra_1=s%7Cc%7C314049608549%7Ce%7Cfacebook%7C&placement=&creative=314049608549&keyword=facebook&partner_id=googlesem&extra_2=campaignid%3D1636795897%26adgroupid%3D64025017178%26matchtype%3De%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-541132862%26loc_physical_ms%3D1003673%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=CjwKCAiAwrf-BRA9EiwAUWwKXmWLS7zIejIPnQwnKzu9lWT6w8qPGY5qIO0RGb11392qKKUx7ZHydRoCYoUQAvD_BwE"><i style="font-size: 40px; margin-right: 10px" class="fab fa-facebook"></i></a>
+                <a class="grey-text text-lighten-4 right" href="https://www.instagram.com/"><i style="font-size: 40px; margin-right: 10px" class="fab fa-instagram"></i></a>
+                <a class="grey-text text-lighten-4 right" href="https://web.whatsapp.com/"><i style="font-size: 40px; margin-right: 10px" class="fab fa-whatsapp"></i></a>
             </div>
         </div>
     </footer>
